@@ -17,7 +17,7 @@ user = User(**user_data)
 # Verificando se os dados são válidos (o Pydantic valida automaticamente os tipos)
 print(user)  # Imprime os dados do usuário em formato JSON
 print(user.name) # Imprime apenas o nome do usuário
-print(user.json()) # Imprime os dados do usuário em formato JSON
+print(user.model_dump_json()) # Imprime os dados do usuário em formato JSON
 
 # Validação de dados: tentar criar uma instância com dados inválidos
 try:
@@ -33,7 +33,7 @@ except Exception as e:
     print("Dados inválidos não foram aceitos.")
 
 # Serialização e desserialização
-user_json = user.json()
+user_json = user.model_dump_json()
 print(f"JSON: {user_json}") # Imprime os dados em formato JSON
 new_user = User.model_validate(user_json) # Desserializa de volta para um objeto
 print(f"Objeto: {new_user}") # Imprime o objeto criado
