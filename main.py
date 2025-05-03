@@ -34,6 +34,6 @@ except Exception as e:
 
 # Serialização e desserialização
 user_json = user.model_dump_json()
-print(f"JSON: {user_json}") # Imprime os dados em formato JSON
+print(f"JSON: {user_json}") # Imprime os dados em formato JSON 
 new_user = User.model_validate(user_json) # Desserializa de volta para um objeto
 print(f"Objeto: {new_user}") # Imprime o objeto criado
