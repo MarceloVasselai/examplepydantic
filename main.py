@@ -31,6 +31,7 @@ try:
 except Exception as e:
     print(f"Erro de validação: {e}")
     print("Dados inválidos não foram aceitos.")
+    print("Erro de validação: ", e)
 
 # Serialização e desserialização 
 user_json = user.model_dump_json()
